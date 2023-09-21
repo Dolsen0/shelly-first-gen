@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default async function getStatus(req, res){
-    await axios.get("http://shellymotionsensor-60a42399405c/status")
+    await axios.get(`http://shelly${process.env.DEVICE}-${process.env.MAC}/status`)
     .then((response) => {
       res.send(response.data);
     })
@@ -12,6 +12,3 @@ export default async function getStatus(req, res){
       console.log(error);
     });
 }
-
-
-// http://shellymotionsensor-60a42399405c/status
