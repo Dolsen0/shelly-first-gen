@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export default async function getStatus(req, res){
-    await axios.get(`http://shelly${process.env.DEVICE}-${process.env.MAC}/status`)
+    await axios.get(`http://${process.env.VINTAGE}/status`)
+    // await axios.get(`http://192.168.33.1/status`)
     .then((response) => {
       const sensor = response.data.sensor;
       res.send(response.data);
@@ -14,3 +15,8 @@ export default async function getStatus(req, res){
       console.log(error);
     });
 }
+
+
+
+// IP for new devices
+// http://192.168.33.1 

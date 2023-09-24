@@ -3,7 +3,7 @@
 import axios from "axios";
 
 export default async function getSTA(req, res) {
-  await axios.get(`http://192.168.33.1/settings/sta?enabled=1&ssid=${process.env.SSID}&key=${process.env.KEY}&ipv4_method=dhcp`)
+  await axios.get(`http://${process.env.MOTION}/settings/sta?enabled=1&ssid=${process.env.SSID}&key=${process.env.KEY}&ipv4_method=dhcp`)
     .then((response) => {
       res.send(response.data);
     })
