@@ -6,7 +6,7 @@ import cors from 'cors';
 import getSettings from './controllers/getSettings.js';
 import getSettingsSta from './controllers/getSettingsSta.js';
 import getStatus from './controllers/getStatus.js';
-import getSTA from './controllers/getSTA.js';
+import setSTA from './controllers/setSTA.js';
 import getMotionDark from './controllers/getMotionDark.js';
 
 const PORT = 3000;
@@ -21,7 +21,7 @@ app.get('/settings', getSettings);
 
 app.get('/settings/sta', getSettingsSta);
 
-app.get('/shelly/connect', getSTA);
+app.get('/shelly/connect', setSTA);
 
 app.get('/action/motiondark', getMotionDark);
 

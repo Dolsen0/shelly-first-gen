@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default async function getStatus(req, res){
-    await axios.get(`http://${process.env.VINTAGE}/status`)
-    // await axios.get(`http://192.168.33.1/status`)
+    // await axios.get(`http://${process.env.MOTION}/status`)
+    await axios.get(`http://192.168.33.1/status`)
     .then((response) => {
       const sensor = response.data.sensor;
       res.send(response.data);
